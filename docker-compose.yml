@@ -26,7 +26,6 @@ jenkins:
   volumes:
     - /kubernetes_cd/jenkins/data:/var/jenkins_home
     - /var/run/docker.sock:/var/run/docker.sock
-    - /usr/bin/docker:/usr/bin/docker
     - /kubernetes_cd/registry/certs/domain.crt:/etc/docker/certs.d/registry.cloud.com/ca.crt
   extra_hosts:
     - registry.cloud.com:10.62.66.169
