@@ -1,7 +1,8 @@
 registry:
   restart: always
   image: registry:2
-  net: "host"
+  hostname: registry
+  domainname: cloud.com
   ports:
     - 5000:5000
   environment:
@@ -14,3 +15,11 @@ registry:
     - /kubernetes_cd/registry/data:/var/lib/registry
     - /kubernetes_cd/registry/certs:/certs
     - /kubernetes_cd/registry/auth:/auth
+jenkins:
+  restart: always
+  build: jenkins/
+  net: host
+  volumes:
+    - /kubernetes_cd/jenkins/data:/var/jenkins_home
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /usr/bin/docker:/usr/bin/docker
