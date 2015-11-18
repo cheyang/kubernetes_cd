@@ -18,7 +18,8 @@ registry:
 jenkins:
   restart: always
   build: jenkins/
-  net: host
+  ports:
+    - 8080:8080
   volumes:
     - /kubernetes_cd/jenkins/data:/var/jenkins_home
     - /var/run/docker.sock:/var/run/docker.sock
