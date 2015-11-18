@@ -4,7 +4,7 @@ registry:
   hostname: registry
   domainname: cloud.com
   ports:
-    - 5000:5000
+    - 443:5000
   environment:
     REGISTRY_HTTP_TLS_CERTIFICATE: /certs/domain.crt
     REGISTRY_HTTP_TLS_KEY: /certs/domain.key
@@ -24,6 +24,6 @@ jenkins:
     - /kubernetes_cd/jenkins/data:/var/jenkins_home
     - /var/run/docker.sock:/var/run/docker.sock
     - /usr/bin/docker:/usr/bin/docker
-    - /kubernetes_cd/registry/certs/domain.crt:/etc/docker/certs.d/registry.cloud.com\\:5000/ca.crt
+    - /kubernetes_cd/registry/certs/domain.crt:/etc/docker/certs.d/registry.cloud.com/ca.crt
   extra_hosts:
     - registry.cloud.com:${registry_protocol_ADDR}
