@@ -1,3 +1,4 @@
+#https://hub.docker.com/r/sameersbn/gitlab/
 postgresql:
   image: sameersbn/postgresql:9.4-7
   environment:
