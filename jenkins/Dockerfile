@@ -8,5 +8,6 @@ RUN apt-get update \
     && apt-get install -y docker.io  \
     && groupadd -g 996 dockeruser \
     && usermod -a -G docker jenkins \
-    && usermod -a -G root jenkins dockeruser
+    && usermod -a -G root jenkins \
+    && usermod -a -G root dockeruser
 USER jenkins
