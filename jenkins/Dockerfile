@@ -6,7 +6,7 @@ USER root
 # Otherwise the socket file is not accessible.
 RUN apt-get update \
     && apt-get install -y docker.io  \
-    && RUN groupadd -g 996 dockeruser
+    && groupadd -g 996 dockeruser
     && usermod -a -G docker jenkins \
     && usermod -a -G root jenkins dockeruser
 USER jenkins
