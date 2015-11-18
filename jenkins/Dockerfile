@@ -9,5 +9,5 @@ RUN apt-get update \
     && groupadd -g 996 dockeruser \
     && usermod -a -G docker jenkins \
     && usermod -a -G root jenkins \
-    && usermod -a -G root dockeruser
+    && usermod -a -G dockeruser jenkins
 USER jenkins
