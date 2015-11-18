@@ -29,4 +29,4 @@ jenkins:
     - /usr/bin/docker:/usr/bin/docker
     - /kubernetes_cd/registry/certs/domain.crt:/etc/docker/certs.d/registry.cloud.com/ca.crt
   extra_hosts:
-    - registry.cloud.com:${REGISTRY_PORT_5000_TCP_ADDR}
+    - registry.cloud.com:10.62.66.169
